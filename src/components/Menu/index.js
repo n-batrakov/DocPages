@@ -1,8 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-export default ({items}) => (
+export default ({data}) => (
     <div>
-        <ul>{items.map(x => <li>{x}</li>)}</ul>
+        <ul>{
+            data.allMarkdownRemark.edges.map(({node}) => {
+                const link = <Link to={node.fields.slug}>{node.fields.slug}</Link>
+                return <li>{link}</li>
+            })
+        }</ul>
     </div>
 )
