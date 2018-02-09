@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import './index.css'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ data, children }) => (
   <div>
     <Helmet
       title="Docs"
@@ -16,7 +16,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <Menu items={[1, 2, 3]} />
+    <Menu data={data}/>
     <div
       style={{
         margin: '0 auto',
@@ -35,3 +35,17 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+    query MenuItemsQuery {
+        allMarkdownRemark {
+            edges {
+                node {
+                    id
+                    headings { value }
+                    fields { slug }
+                }
+            }
+        }
+    }
+`

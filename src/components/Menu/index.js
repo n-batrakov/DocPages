@@ -20,14 +20,13 @@ const MenuItem = glamor.li({
 })
 
 
-export default ({items}) => (
+export default ({data}) => (
     <MenuBlock>
-        <MenuList>
-            {
-                items.map(x => 
-                    <MenuItem> {x} </MenuItem>
-                )
-            }
-        </MenuList>
+        <MenuList>{
+            data.allMarkdownRemark.edges.map(({node}) => {
+                const link = <Link to={node.fields.slug}>{node.fields.slug}</Link>
+                return <MenuItem>{link}</MenuItem>
+            })
+        }</MenuList>
     </MenuBlock>
 )
