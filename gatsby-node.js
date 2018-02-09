@@ -29,7 +29,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      const template = path.resolve(`./src/templates/blog-post.js`);
+      const template = path.resolve(`./src/templates/doc.js`);
       console.log(template);
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({

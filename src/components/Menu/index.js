@@ -3,10 +3,6 @@ import Link from 'gatsby-link'
 
 export default ({items}) => (
     <div>
-        <ul>
-            {
-                items.map(x => <li>{x}</li>)
-            }
-        </ul>
+        <ul>{items.map(x => <li>{x}</li>)}</ul>
     </div>
 )

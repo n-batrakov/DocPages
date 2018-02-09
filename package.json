@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "ITExpert.DocPages",
+  "description": "ITExpert doc pages generator from markdown",
   "version": "0.0.1",
-  "author": "n.batrakov",
+  "author": "n.batrakov,xeni korelski",
   "dependencies": {
     "gatsby": "^1.9.158",
     "gatsby-link": "^1.6.34",
